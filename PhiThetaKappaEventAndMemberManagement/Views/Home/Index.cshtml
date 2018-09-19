@@ -1,0 +1,14 @@
+﻿@model List<Events> 
+
+<table>
+
+    @foreach (Events events in Model)
+    {
+    <tr>
+        <td>@events.EventName</td>
+        <td>@events.EventAddress</td>
+    </tr>
+    }
+</table>
+
+    
