@@ -29,6 +29,6 @@ namespace PhiThetaKappaEventAndMemberManagement
             app.UseStaticFiles();
             //app.UseIdentity();
             app.UseMvcWithDefaultRoute();
-        }
-    }
-}
+        }// end Configure method
+    }// end Startup class
+}// end PhiThetaKappaEventAndMemberManagement namespace

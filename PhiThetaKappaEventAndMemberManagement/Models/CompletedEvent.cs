@@ -20,5 +20,5 @@ namespace PhiThetaKappaEventAndMemberManagement.Models
         //[Required]
         [DataType(DataType.Date)]
         public DateTime CompletedEventData { get; set; }
-    }
-}
+    }// end CompletedEvent class
+}// end PhiThetaKappaEventAndMemberManagement.Models namespace

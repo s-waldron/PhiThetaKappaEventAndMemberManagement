@@ -26,5 +26,5 @@ namespace PhiThetaKappaEventAndMemberManagement.Models
         public DateTime EventStartDateAndTime { get; set; }
         //[Required]
         public DateTime EventEndDateAndTime { get; set; }
-    }
-}
+    }// end Events class
+}// end PhiThetaKappaEventAndMemberManagement.Models namespace

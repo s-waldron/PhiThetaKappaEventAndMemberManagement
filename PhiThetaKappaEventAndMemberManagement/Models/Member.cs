@@ -8,13 +8,13 @@ namespace PhiThetaKappaEventAndMemberManagement.Models
 {
     public class Member
     {
-        [Key]
+        //[Key]
         public int MEMBERID { get; set; }
-        [Required]
+        //[Required]
         public String MemberFirstName { get; set; }
-        [Required]
+        //[Required]
         public String MemberLastName { get; set; }
-        [Required]
+        //[Required]
         public String MemberEmailAddress { get; set; }
-    }
-}
+    }// end Member class
+}// end PhiThetaKappaEventAndMemberManagement.Models namespace

@@ -18,6 +18,6 @@ namespace PhiThetaKappaEventAndMemberManagement.Controllers
         {
             EventsList.Add(new Events { EventName = "Something", EventAddress = "321 N SomePlace Dr" });
             return View(EventsList);
-        }
-    }
-}
+        }// end Index method
+    }// end HomeController class
+}// end PhiThetaKappaEventAndMemberManagement.Controllers namespace
