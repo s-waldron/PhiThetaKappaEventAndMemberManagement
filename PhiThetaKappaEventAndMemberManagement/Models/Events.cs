@@ -13,6 +13,8 @@ namespace PhiThetaKappaEventAndMemberManagement.Models
         //[Required]
         public String EventName { get; set; }
         //[Required]
+        public String EventLocationName { get; set; }
+        //[Required]
         public String EventAddress { get; set; }
         //[Required]
         public String EventCity { get; set; }
@@ -20,6 +22,9 @@ namespace PhiThetaKappaEventAndMemberManagement.Models
         public String EventState { get; set; }
         //[Required]
         public int EventZipCode { get; set; }
-
+        //[Required]
+        public DateTime EventStartDateAndTime { get; set; }
+        //[Required]
+        public DateTime EventEndDateAndTime { get; set; }
     }
 }

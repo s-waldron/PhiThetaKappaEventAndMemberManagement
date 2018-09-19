@@ -9,13 +9,16 @@ namespace PhiThetaKappaEventAndMemberManagement.Models
 {
     public class CompletedEvent
     {
-        [Key]
+        //[Key]
         public int COMPLETEDEVENTID { get; set; }
-        [ForeignKey("Event")]
+        //[ForeignKey("Event")]
         public int EVENTID { get; set; }
-        [Required]
+        //[Required]
         public Boolean CompletedEventComplete { get; set; }
-        [Required]
+        //[Required]
         public int CompletedEventNumberOfMembers { get; set; }
+        //[Required]
+        [DataType(DataType.Date)]
+        public DateTime CompletedEventData { get; set; }
     }
 }
