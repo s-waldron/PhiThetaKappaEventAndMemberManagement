@@ -22,12 +22,12 @@ namespace PhiThetaKappaEventAndMemberManagement.Controllers
                 MemberLastName = "Hally",
                 MemberEmailAddress = "shally@sjrstate.edu"
             });
-            return View();
+            return View(MembersList);
         }// end Index method
 
-        public IActionResult CreateMember ()
+        public IActionResult Create()
         {
-            return View(new Member);
+            return View(new Member());
         }// end CreateMember method
     }// end MemberController class
 }// end PhiThetaKappaEventAndMemberManagement.Controllers namespace

@@ -1,0 +1,40 @@
+﻿@model Events
+
+<table>
+    <tr>
+        <td><label asp-for="EventName">Event Name:</label></td>
+        <td><input asp-for="EventName" /></td>
+    </tr>
+    <tr>
+        <td><label>Event Location Name:</label></td>
+        <td><input asp-for="EventLocationName" /></td>
+    </tr>
+    <tr>
+        <td><label>Event Address:</label></td>
+        <td><input asp-for="EventAddress" /></td>
+    </tr>
+    <tr>
+        <td><label>Event City:</label></td>
+        <td><input asp-for="EventCity" /></td>
+    </tr>
+    <tr>
+        <td><label>Event State:</label></td>
+        <td><input asp-for="EventState" /></td>
+    </tr>
+    <tr>
+        <td><label>Event Zip Code:</label></td>
+        <td><input asp-for="EventZipCode" /></td>
+    </tr>
+    <tr>
+        <td><label>Event Start Date and Time:</label></td>
+        <td><input asp-for="EventStartDateAndTime" /></td>
+    </tr>
+    <tr>
+        <td><label>Event End Date and Time:</label></td>
+        <td><input asp-for="EventEndDateAndTime" /></td>
+    </tr>
+    <tr>
+        <td><label>Event Description:</label></td>
+        <td><textarea asp-for="EventDescription" cols="40" rows="10"></textarea></td>
+    </tr>
+</table>

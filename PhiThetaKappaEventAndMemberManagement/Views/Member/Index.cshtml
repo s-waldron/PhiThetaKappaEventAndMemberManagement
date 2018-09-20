@@ -1,1 +1,19 @@
 ﻿@model List<Member>
+
+<table>
+    <tr>
+        <th>Member First Name</th>
+        <th>Member Last Name</th>
+        <th>Member Email</th>
+    </tr>
+    @foreach(Member member in Model)
+    {
+        <tr>
+            <td>@member.MemberFirstName</td>
+            <td>@member.MemberLastName</td>
+            <td>@member.MemberEmailAddress</td>
+        </tr>
+    }
+</table>
+<br />
+<a asp-action="Create" class="btn-sm btn-default btn-primary">Create New Member</a>

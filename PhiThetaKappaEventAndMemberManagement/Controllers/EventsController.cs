@@ -28,6 +28,10 @@ namespace PhiThetaKappaEventAndMemberManagement.Controllers
             return View(EventsList);
         }// end Index method
 
+        public IActionResult Create()
+        {
+            return View(new Events());
+        }// end CreateEvents method
 
     }// end EventsController class
 }// end PhiThetaKappaEventAndMemberManagement.Controllers namespace
