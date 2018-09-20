@@ -1,11 +1,26 @@
 ﻿@model List<Events> 
 
 <table>
+    <tr>
+        <th style="width:15%">Event Name</th>
+        <th>Event Location Name</th>
+        <th>Event Address</th>
+        <th>Event City</th>
+        <th>Event State</th>
+        <th>Event Zip Code</th>
+        <th>Event Start Date and Time</th>
+        <th>Event End Date and Time</th>
+        <th>Event Description</th>
+    </tr>
     @foreach (Events events in Model)
     {
     <tr>
         <td>@events.EventName</td>
+        <td>@events.EventLocationName</td>
         <td>@events.EventAddress</td>
+        <td>@events.EventCity</td>
+        <td>@events.EventState</td>
+        <td>@events.EventZipCode</td>
     </tr>
     }
 </table>

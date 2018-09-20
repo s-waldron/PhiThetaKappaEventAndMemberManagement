@@ -9,14 +9,15 @@ using PhiThetaKappaEventAndMemberManagement.Models;
 
 namespace PhiThetaKappaEventAndMemberManagement.Controllers
 {
-    public class HomeController : Controller
+    public class EventsController : Controller
     {
         public List<Events> EventsList = new List<Events>();
-        
+
         // GET: /<controller>/
         public IActionResult Index()
         {
-            EventsList.Add(new Events {
+            EventsList.Add(new Events
+            {
                 EventName = "Something",
                 EventLocationName = "Some Place",
                 EventAddress = "321 N SomePlace Dr",
@@ -26,5 +27,7 @@ namespace PhiThetaKappaEventAndMemberManagement.Controllers
             });
             return View(EventsList);
         }// end Index method
-    }// end HomeController class
+
+
+    }// end EventsController class
 }// end PhiThetaKappaEventAndMemberManagement.Controllers namespace
