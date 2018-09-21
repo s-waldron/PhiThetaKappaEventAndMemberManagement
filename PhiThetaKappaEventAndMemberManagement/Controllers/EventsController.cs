@@ -16,6 +16,8 @@ namespace PhiThetaKappaEventAndMemberManagement.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
+            DateTime startTime = new DateTime(2018, 10, 05, 13, 00, 00);
+            DateTime endTime = new DateTime(2018, 10, 05, 15, 00, 00);
             EventsList.Add(new Events
             {
                 EventName = "Something",
@@ -23,7 +25,10 @@ namespace PhiThetaKappaEventAndMemberManagement.Controllers
                 EventAddress = "321 N SomePlace Dr",
                 EventCity = "Palatka",
                 EventState = "Florida",
-                EventZipCode = 32146
+                EventZipCode = 32146,
+                EventStartDateAndTime = startTime,
+                EventEndDateAndTime = endTime,
+                EventDescription = "We are going some place to do something of interest."
             });
             return View(EventsList);
         }// end Index method
