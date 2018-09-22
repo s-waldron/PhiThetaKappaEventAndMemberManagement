@@ -37,8 +37,10 @@ namespace PhiThetaKappaEventAndMemberManagement.Models
                     dbEntry.EventStartDateAndTime = events.EventStartDateAndTime;
                     dbEntry.EventEndDateAndTime = events.EventEndDateAndTime;
                     dbEntry.EventDescription = events.EventDescription;
+                    dbEntry.EventCompletedEvent = events.EventCompletedEvent;
                 }// end if(dbEntry != null) check
             }// end else statement
+            context.SaveChanges();
         }// end SaveEvents method
     }// end EFEventsRepository class
 }// end PhiThetaKappaEventAndMemberManagement.Models namespace

@@ -33,6 +33,7 @@ namespace PhiThetaKappaEventAndMemberManagement.Models
                     dbEntry.MemberEmailAddress = member.MemberEmailAddress;
                 }// end if(dbEntry != null) check
             }// end else statement
+            context.SaveChanges();
         }// end SaveMember method
     }// end EFMemberRepository class
 }// end PhiThetaKappaEventAndMemberManagement.Models namespace
