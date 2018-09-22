@@ -12,6 +12,12 @@ namespace PhiThetaKappaEventAndMemberManagement.Controllers
     public class EventsController : Controller
     {
         public List<Events> EventsList = new List<Events>();
+        ApplicationDbContext context;
+
+        public EventsController(ApplicationDbContext ctx)
+        {
+            context = ctx;
+        }// end EventsController constructor
 
         // GET: /<controller>/
         public IActionResult Index()
@@ -38,5 +44,18 @@ namespace PhiThetaKappaEventAndMemberManagement.Controllers
             return View(new Events());
         }// end CreateEvents method
 
+        public IActionResult UpdateEvent(int EVENTID)
+        {
+            Events events = context.Events
+                .FirstOrDefault(eve => eve.EVENTID == EVENTID);
+            if(events != null)
+            {
+                return View(events);
+            }// end if(events != null) check
+            else
+            {
+                return RedirectToAction("Index");
+            }// end else statement
+        }// end UpdateEvent method
     }// end EventsController class
 }// end PhiThetaKappaEventAndMemberManagement.Controllers namespace

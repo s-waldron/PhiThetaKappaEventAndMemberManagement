@@ -9,6 +9,6 @@ namespace PhiThetaKappaEventAndMemberManagement.Models
 
         public DbSet<Events> Events { get; set; }
         public DbSet<Member> Member { get; set; }
-        public DbSet<CompletedEvent> CompletedEvents { get; set; }
+        public DbSet<News> News { get; set; }
     }// end ApplicationDbContext class
 }// end PhiThetaKappaEventAndMemberManagement.Models namespace
