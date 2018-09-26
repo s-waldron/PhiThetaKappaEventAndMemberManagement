@@ -5,18 +5,18 @@ namespace PhiThetaKappaEventAndMemberManagement.Models
 {
     public class Member
     {
-        //[Key]
+        [Key]
         public int MEMBERID { get; set; }
-        //[Required]
+        [Required]
         public String MemberFirstName { get; set; }
-        //[Required]
+        [Required]
         public String MemberLastName { get; set; }
-        //[Required]
+        [Required]
         [DataType(DataType.Date)]
         public DateTime MemberJoinDate { get; set; }
-        //[Required]
+        [Required]
         public String MemberEmailAddress { get; set; }
-        //[Required]
+        [Required]
         public Boolean MemberAlumnus { get; set; }
     }// end Member class
 }// end PhiThetaKappaEventAndMemberManagement.Models namespace

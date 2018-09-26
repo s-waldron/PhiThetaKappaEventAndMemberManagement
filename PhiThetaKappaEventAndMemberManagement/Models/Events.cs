@@ -5,25 +5,25 @@ namespace PhiThetaKappaEventAndMemberManagement.Models
 {
     public class Events
     {
-        //[Key]
+        [Key]
         public int EVENTID { get; set; }
-        //[Required]
+        [Required]
         public String EventName { get; set; }
-        //[Required]
+        [Required]
         public String EventLocationName { get; set; }
-        //[Required]
+        [Required]
         public String EventAddress { get; set; }
-        //[Required]
+        [Required]
         public String EventCity { get; set; }
-        //[Required]
+        [Required]
         public String EventState { get; set; }
-        //[Required]
+        [Required]
         public int EventZipCode { get; set; }
-        //[Required]
+        [Required]
         public DateTime EventStartDateAndTime { get; set; }
-        //[Required]
+        [Required]
         public DateTime EventEndDateAndTime { get; set; }
-        //[Required]
+        [Required]
         public String EventDescription { get; set; }
         public Boolean EventCompletedEvent { get; set; }
         public int CompletedEventNumberOfMembers { get; set; }

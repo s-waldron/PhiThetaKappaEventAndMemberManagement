@@ -1,4 +1,4 @@
-﻿@model List<Events> 
+﻿@model HomeViewModel
 
 <table>
     <tr>
@@ -12,7 +12,7 @@
         <th style="width:15em">Event End Date and Time</th>
         <th style="width:15em">Event Description</th>
     </tr>
-    @foreach (Events events in Model)
+    @foreach (Events events in Model.Events)
     {
     <tr>
         <td>@events.EventName</td>

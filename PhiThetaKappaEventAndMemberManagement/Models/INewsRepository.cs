@@ -2,7 +2,7 @@
 
 namespace PhiThetaKappaEventAndMemberManagement.Models
 {
-    interface INewsRepository
+    public interface INewsRepository
     {
         IEnumerable<News> News { get; }
 

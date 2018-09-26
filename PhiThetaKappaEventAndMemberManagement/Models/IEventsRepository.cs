@@ -2,7 +2,7 @@
 
 namespace PhiThetaKappaEventAndMemberManagement.Models
 {
-    interface IEventsRepository
+    public interface IEventsRepository
     {
         IEnumerable<Events> Events { get; }
 

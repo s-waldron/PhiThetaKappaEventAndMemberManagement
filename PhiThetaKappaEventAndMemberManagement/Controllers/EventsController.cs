@@ -10,51 +10,36 @@ namespace PhiThetaKappaEventAndMemberManagement.Controllers
 {
     public class EventsController : Controller
     {
-        public List<Events> EventsList = new List<Events>();
-        ApplicationDbContext context;
+        private List<Events> EventsList = new List<Events>();
+        private ApplicationDbContext context;
+        private IEventsRepository repository;
 
-        public EventsController(ApplicationDbContext ctx)
+        public EventsController(IEventsRepository repo, ApplicationDbContext ctx)
         {
             context = ctx;
+            repository = repo;
         }// end EventsController constructor
 
         // GET: /<controller>/
-        public IActionResult Index()
-        {
-            DateTime startTime = new DateTime(2018, 10, 05, 13, 00, 00);
-            DateTime endTime = new DateTime(2018, 10, 05, 15, 00, 00);
-            EventsList.Add(new Events
-            {
-                EventName = "Something",
-                EventLocationName = "Some Place",
-                EventAddress = "321 N SomePlace Dr",
-                EventCity = "Palatka",
-                EventState = "Florida",
-                EventZipCode = 32146,
-                EventStartDateAndTime = startTime,
-                EventEndDateAndTime = endTime,
-                EventDescription = "We are going some place to do something of interest."
-            });
-            return View(EventsList);
-        }// end Index method
+        public IActionResult Index() => View(repository.Events);
 
-        public IActionResult Create()
-        {
-            return View(new Events());
-        }// end CreateEvents method
+        public IActionResult EventsForm() => View(new Events());
 
-        public IActionResult UpdateEvent(int EVENTID)
+        public IActionResult UpdateEvent(int EVENTID) => View("EventsForm", repository.Events
+            .FirstOrDefault(eve => eve.EVENTID == EVENTID));
+
+        [HttpPost]
+        public IActionResult EventsForm(Events events)
         {
-            Events events = context.Events
-                .FirstOrDefault(eve => eve.EVENTID == EVENTID);
-            if(events != null)
+            if (ModelState.IsValid)
             {
-                return View(events);
-            }// end if(events != null) check
+                repository.SaveEvents(events);
+                return RedirectToAction("Index");
+            }// end if(ModelState.IsValid) check
             else
             {
-                return RedirectToAction("Index");
+                return View(events);
             }// end else statement
-        }// end UpdateEvent method
+        }// end EventForm method
     }// end EventsController class
 }// end PhiThetaKappaEventAndMemberManagement.Controllers namespace
