@@ -1,0 +1,24 @@
+﻿@model IEnumerable<News>
+
+<table>
+    <tr>
+        <th>News Article Title:</th>
+        <th>News Created Date:</th>
+        <th>Update News Article:</th>
+    </tr>
+    @foreach (News news in Model)
+    {
+        <tr>
+            <td>@news.NewsArticleTitle</td>
+            <td>@news.NewsCreatedDate</td>
+            <td>
+                <form asp-action="UpdateNews" method="post">
+                    <input type="hidden" name="NewsID" value="@news.NEWSID" />
+                    <button type="submit">Edit</button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>
+<br />
+<a class="btn btn-sm btn-default" asp-action="NewsForm">Create New News Article</a>

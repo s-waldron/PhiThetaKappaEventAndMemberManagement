@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using PhiThetaKappaEventAndMemberManagement.Models;
 
@@ -11,17 +8,32 @@ namespace PhiThetaKappaEventAndMemberManagement.Controllers
 {
     public class NewsController : Controller
     {
-        private ApplicationDbContext context;
         private INewsRepository repository;
 
-        public NewsController(ApplicationDbContext ctx, INewsRepository repo)
+        public NewsController(INewsRepository repo)
         {
-            context = ctx;
             repository = repo;
         }// end NewsController constructor
-        // GET: /<controller>/
+
         public IActionResult Index() => View(repository.News);
 
+        public IActionResult NewsForm() => View(new News());
 
+        public IActionResult UpdateNews(int NewsID) => View(repository.News
+            .FirstOrDefault(ne => ne.NEWSID == NewsID));
+
+        [HttpPost]
+        public IActionResult NewsForm(News news)
+        {
+            if (ModelState.IsValid)
+            {
+                repository.SaveNews(news);
+                return RedirectToAction("Index");
+            }// end if(ModelState.IsValid) check
+            else
+            {
+                return View(news);
+            }// end else statement
+        }// end NewsForm method
     }// end NewsController class
 }// end PhiThetaKappaEventAndMemberManagement.Controllers namespace

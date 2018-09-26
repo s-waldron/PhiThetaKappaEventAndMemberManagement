@@ -1,0 +1,22 @@
+﻿@model News
+
+<form asp-action="NewsForm" method="post">
+    <input asp-for="NEWSID" />
+    <table>
+        <tr style="height:2.25em">
+            <td style="width:15em"><label asp-for="NewsArticleTitle">News Article Title:</label></td>
+            <td><input asp-for="NewsArticleTitle" /></td>
+        </tr>
+        <tr style="height:2.25em">
+            <td><label asp-for="NewsCreatedDate">News Article Create Date:</label></td>
+            <td><input asp-for="NewsCreatedDate" /></td>
+        </tr>
+        <tr style="height:2.25em">
+            <td><label asp-for="NewsArticle">News Article:</label></td>
+            <td><textarea asp-for="NewsArticle" cols="30" rows="5"></textarea></td>
+        </tr>
+        <tr style="height:2.25em">
+            <td colspan="2"><button type="submit">Submit</button></td>
+        </tr>
+    </table>
+</form>

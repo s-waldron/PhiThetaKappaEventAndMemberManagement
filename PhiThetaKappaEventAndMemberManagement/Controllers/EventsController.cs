@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using PhiThetaKappaEventAndMemberManagement.Models;
 
@@ -10,13 +8,10 @@ namespace PhiThetaKappaEventAndMemberManagement.Controllers
 {
     public class EventsController : Controller
     {
-        private List<Events> EventsList = new List<Events>();
-        private ApplicationDbContext context;
         private IEventsRepository repository;
 
-        public EventsController(IEventsRepository repo, ApplicationDbContext ctx)
+        public EventsController(IEventsRepository repo)
         {
-            context = ctx;
             repository = repo;
         }// end EventsController constructor
 
@@ -25,8 +20,8 @@ namespace PhiThetaKappaEventAndMemberManagement.Controllers
 
         public IActionResult EventsForm() => View(new Events());
 
-        public IActionResult UpdateEvent(int EVENTID) => View("EventsForm", repository.Events
-            .FirstOrDefault(eve => eve.EVENTID == EVENTID));
+        public IActionResult UpdateEvents(int EventID) => View("EventsForm", repository.Events
+            .FirstOrDefault(eve => eve.EVENTID == EventID));
 
         [HttpPost]
         public IActionResult EventsForm(Events events)

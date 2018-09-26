@@ -17,20 +17,21 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Phi Theta Kappa Chi Tau</a>
+                    <a style="margin-bottom:3%" asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Phi Theta Kappa<br />Chi Tau</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                         <li><a asp-area="" asp-controller="Member" asp-action="Index">Member</a></li>
                         <li><a asp-area="" asp-controller="Events" asp-action="Index">Events</a></li>
+                        <li><a asp-area="" asp-controller="News" asp-action="Index">News</a></li>
                     </ul>
-                    <a class="btn btn-default pull-right" asp-controller="Cart" asp-action="Index">Log In!</a>
+                    <a style="margin-top:2.25%" class="btn btn-default pull-right" asp-controller="Cart" asp-action="Index">Log In!</a>
                 </div>
             </div>
         </nav>
     </div>
-    <div>
+    <div style="margin-left:1%">
         @RenderBody()
     </div>
 </body>

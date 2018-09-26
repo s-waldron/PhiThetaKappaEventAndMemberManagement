@@ -27,6 +27,7 @@ namespace PhiThetaKappaEventAndMemberManagement.Models
                 if(dbEntry != null)
                 {
                     dbEntry.NewsArticleTitle = news.NewsArticleTitle;
+                    dbEntry.NewsCreatedDate = news.NewsCreatedDate;
                     dbEntry.NewsArticle = news.NewsArticle;
                 }// end if(dbEntry != null) check
             }// end else statement

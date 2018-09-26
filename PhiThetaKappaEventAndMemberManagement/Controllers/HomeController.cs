@@ -25,9 +25,27 @@ namespace PhiThetaKappaEventAndMemberManagement.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            
-            return View(new HomeViewModel { Events = eventsRepository.Events,
-            News = newsRepository.News});
+            DateTime theDate = new DateTime();
+            theDate = DateTime.Now;
+            IEnumerable<Events> theEvents = eventsRepository.Events;
+            IEnumerable<News> theNews = newsRepository.News;
+            List<Events> events = new List<Events>();
+            HomeViewModel homeViewModel = new HomeViewModel();
+            foreach(Events ev in theEvents)
+            {
+                if(ev.EventStartDateAndTime > theDate)
+                {
+                    events.Add(ev);
+                }// end if(ev.EventStartDateAndTime > theDate) check
+            }// end foreach loop
+            List<News> news = new List<News>();
+            int size = 0;
+            foreach(News ne in theNews)
+            {
+                size++;
+            }// end foreach loop
+            homeViewModel.Events = events;
+            return View(homeViewModel);
         }// end Index method
     }// end HomeController class
 }// end PhiThetaKappaEventAndMemberManagement.Controllers namespace

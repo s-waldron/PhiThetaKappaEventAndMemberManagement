@@ -2,28 +2,23 @@
 
 <table>
     <tr>
-        <th style="width:15em">Event Name</th>
-        <th style="width:15em">Event Location Name</th>
-        <th style="width:15em">Event Address</th>
-        <th style="width:15em">Event City</th>
-        <th style="width:15em">Event State</th>
-        <th style="width:15em">Event Zip Code</th>
-        <th style="width:15em">Event Start Date and Time</th>
-        <th style="width:15em">Event End Date and Time</th>
-        <th style="width:15em">Event Description</th>
+        <th style="width:10em">Event Name</th>
+        <th style="width:10em">Event Location Name</th>
+        <th style="width:10em">Event Description</th>
+        <th style="width:10em">Event Update</th>
     </tr>
     @foreach (Events events in Model)
     {
         <tr>
             <td>@events.EventName</td>
             <td>@events.EventLocationName</td>
-            <td>@events.EventAddress</td>
-            <td>@events.EventCity</td>
-            <td>@events.EventState</td>
-            <td>@events.EventZipCode</td>
-            <td>@events.EventStartDateAndTime</td>
-            <td>@events.EventEndDateAndTime</td>
             <td>@events.EventDescription</td>
+            <td>
+                <form asp-action="UpdateEvents" method="post">
+                    <input type="hidden" name="EventID" value="@events.EVENTID" />
+                    <button type="submit">Edit</button>
+                </form>
+            </td>
         </tr>
     }
 </table>
